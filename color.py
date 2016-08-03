@@ -51,7 +51,7 @@ def colorize(string, *colors):
 				# May God prevent us from needing to ignore the
 				# original string and print out something else
 				except UnicodeError:
-					print("\nFatal error while printing string.")
+					print("\n\tFatal error while printing string".upper())
 
 
 	return None
