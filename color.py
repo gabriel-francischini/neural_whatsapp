@@ -34,6 +34,8 @@ def colorize(string, *colors, do_printing = True):
 	try:
 		if do_printing:
 			print(colored_string)
+		else:
+			return colored_string
 	
 	# If it do rise, the we should try other encoding
 	except UnicodeError:
