@@ -7,7 +7,7 @@ from colorama import *
 init()
 
 # This is a function for easly coloring output
-def colorize(string, *colors):
+def colorize(string, *colors, do_printing = True):
 	
 	# If script is running on a console,
 	# color information should be added
@@ -32,7 +32,8 @@ def colorize(string, *colors):
 	# Frequently UnicodeEncodeError or UnicodeDecodeError
 	# rises while attempting to print out the string
 	try:
-		print(colored_string)
+		if do_printing:
+			print(colored_string)
 	
 	# If it do rise, the we should try other encoding
 	except UnicodeError:
