@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8
+from sys import stdout
 from os import isatty
 from colorama import *
 
@@ -11,7 +12,7 @@ def colorize(string, *colors, do_printing = True):
 	
 	# If script is running on a console,
 	# color information should be added
-	if isatty():
+	if stdout.isatty():
 
 		# colored_string is a self-contained colored string
 		colored_string = ""
@@ -20,6 +21,8 @@ def colorize(string, *colors, do_printing = True):
 		for color in colors:
 			colored_string += color
 
+		# Add string in between
+		colored_string += string
 
 		# And the we prevent other non-related strings 
 		# to be formatted as above
