@@ -379,10 +379,37 @@ def test_neural(testing_times = 50, size = 50):
 			except TooMuchInputs:
 				print("\n\t\t\t TooMuchInputs rose")
 
+def test_filter(number_of_tests = 50):
+	print("\n\t Testing filter.py:")
+	
+	# Opens a image for altering
+	image = Image.open("test.jpeg")
+
+	for i in range(number_of_tests):
+		print("\n\t\t Testing nº {}".format(i))
+		
+		filter = [random(), random(), random(),
+			  random(), random(), random(),
+			  random(), random(), random()]
 
 
+		# Resize the filter
+		for value in filter:
+			value = value * 5
 
+		x_size,y_size = image.size
+		
+		print("\n\t\t\t Size: {}".format(image.size))
 
+		# If we're done with the image, restarts
+		if (x_size < 2) and (y_size < 2):
+			image = Image.open("test.jpeg")
+
+		# Otherwise, apply the filter
+		else:
+			image = applyFilter(image, filter)
+		
+			
 
 			
 
@@ -419,6 +446,14 @@ try:
 except IndexError:
 	neural_testing_times = color_testing_times
 
+# Get the third number test
+try:
+	filter_testing_times = int(argv[3])
+# If there's none, use the previous
+except IndexError:
+	filter_testing_times = neural_testing_times
+
 
 test_color(color_testing_times)
 test_neural(neural_testing_times)
+test_filter(filter_testing_times)
