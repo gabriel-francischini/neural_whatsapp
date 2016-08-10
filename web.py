@@ -127,7 +127,7 @@ def downloadImage(driver,index):
 		return None, None
 	return (filenames, description)
 		
-driver = webdriver.Chrome()
+#driver = webdriver.Chrome()
 def tente(driver, text, n):
 	googleSearch(driver, text)
 	for i in range(n):
