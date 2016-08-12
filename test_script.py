@@ -50,8 +50,8 @@ def test_color(testing_times = 300, size = 50):
 	big_string = ""
 
 	# Test for strings
-	for i in range(testing_times):
-		print("\n\t\t Testing {}:".format(i))
+	for i in tqdm(range(testing_times)):
+		#print("\n\t\t Testing {}:".format(i))
 
 		# Starts a empty string
 		string = "\t\t"
@@ -75,8 +75,8 @@ def test_color(testing_times = 300, size = 50):
 
 	print("\n\t Testing colorChoice method:\n\n")
 
-	for i in range(testing_times):
-		print("\n\t\t Testing {}:".format(i))
+	for i in tqdm(range(testing_times)):
+		#print("\n\t\t Testing {}:".format(i))
 
 		# Generates a random string with size lenght
 		string = "\n\t\t" + random_string(size)
@@ -104,7 +104,7 @@ def test_neural(testing_times = 50, size = 50):
 	#### Tests the neurons
 	print("\n\t Testing neurons: ")
 
-	for test in range(testing_times):
+	for test in tqdm(range(testing_times)):
 	
 		print("\n\t\t Testing {}:".format(test))
 
@@ -132,9 +132,9 @@ def test_neural(testing_times = 50, size = 50):
 	#### Tests the layers	
 	print("\n\t Testing layers: ")
 
-	for test in range(testing_times):
+	for test in tqdm(range(testing_times)):
 
-		print("\n\t\t Testing {}:".format(test))
+		#print("\n\t\t Testing {}:".format(test))
 
 		# Generate a random layer
 		test_layer = layer()
@@ -160,7 +160,7 @@ def test_neural(testing_times = 50, size = 50):
 
 	# With a random number of neurons
 	number_of_neurons = randint(0,size)
-	for i in range(number_of_neurons):
+	for i in tqdm(range(number_of_neurons)):
 
 		# Create a random neuron
 		randomNeuron = neuron()
@@ -176,8 +176,8 @@ def test_neural(testing_times = 50, size = 50):
 	#### Test addInput()
 	print("\n\t Testing layer.addInput() :")
 
-	for i in range(testing_times):
-		print("\n\t\t Testing {}:".format(i))
+	for i in tqdm(range(testing_times)):
+		#print("\n\t\t Testing {}:".format(i))
 
 		# This second for loop is need
 		# Since we can accidentaly try do add a input
@@ -197,8 +197,8 @@ def test_neural(testing_times = 50, size = 50):
 	#### Test addInputList()
 	print("\n\t Testing layer.addInputList() :")
 
-	for i in range(testing_times):
-		print("\n\t\t Testing {}:".format(i))
+	for i in tqdm(range(testing_times)):
+		#print("\n\t\t Testing {}:".format(i))
 		
 
 		# Generate a random list at a perfectly size for
@@ -226,8 +226,8 @@ def test_neural(testing_times = 50, size = 50):
 	#### Test addInputDistributed()
 	print("\n\t Testing layer.addInputDistributed() :")
 
-	for i in range(testing_times):
-		print("\n\t\t Testing {}:".format(i))
+	for i in tqdm(range(testing_times)):
+		#print("\n\t\t Testing {}:".format(i))
 
 		# We generate a random list
 		input_list = []
@@ -242,7 +242,7 @@ def test_neural(testing_times = 50, size = 50):
 
 	print("\n\t Single testing layer.doOutput:")
 	
-	for i in range(testing_times):
+	for i in tqdm(range(testing_times)):
 		print("\n\t\t layer.doOutput(): {}".format(test_layer.doOutput()))
 
 	# genome's test
@@ -250,7 +250,7 @@ def test_neural(testing_times = 50, size = 50):
 	#### Testing getGene()
 	print("\n\t Testing getGene(): ")
 
-	for test in range(testing_times):
+	for test in tqdm(range(testing_times)):
 		print("\n\t\t Testing {}:".format(test))
 		
 		# Get a random genome to test
@@ -277,7 +277,7 @@ def test_neural(testing_times = 50, size = 50):
 	testing = 0
 
 	while testing <= testing_times:
-		print("\n\t\t Testing {}:".format(test))
+		print("\n\t\t Testing {}:".format(testing))
 
 		# Random genomes
 		genome_a = genome()
@@ -336,7 +336,7 @@ def test_neural(testing_times = 50, size = 50):
 	##### Tests networks creation
 
 	print("\n\t Testing network():")
-	for i in range(testing_times):
+	for i in tqdm(range(testing_times)):
 		print("\n\t\t Testing nº {}".format(i))
 		new_network = network()
 
@@ -383,9 +383,9 @@ def test_filter(number_of_tests = 50):
 	print("\n\t Testing filter.py:")
 	
 	# Opens a image for altering
-	image = Image.open("test.jpeg")
+	image = Image.open("test.bmp")
 
-	for i in range(number_of_tests):
+	for i in tqdm(range(number_of_tests)):
 		print("\n\t\t Testing nº {}".format(i))
 		
 		filter = [random(), random(), random(),
@@ -409,12 +409,108 @@ def test_filter(number_of_tests = 50):
 		else:
 			image = applyFilter(image, filter)
 		
-			
-
-			
 
 
+def test_web(tests_to_do):
 
+#	for test in tqdm(range(tests_to_do)):
+#		pass	
+#
+#	bar = progressbar.ProgressBar()
+#	for i in bar(range(100)):
+#   		time.sleep(0.02)
+#
+#
+#	with progressbar.ProgressBar(max_value=100) as barA:
+#		with progressbar.ProgressBar(max_value=100) as barB:
+#			with progressbar.ProgressBar(max_value=100) as barC:
+##	bar = progressbar.ProgressBar(max_value=10)
+#				for i in range(100):
+# 	   				time.sleep(0.1)
+# 	   				for j in range(10):
+# 	   					bar = choice([barA,barB,barC])
+# 	   					bar.update(i)
+#
+#	saveout = sys.stdout
+#			
+#	bar = progressbar.ProgressBar(max_value=10,redirect_stdout=True)
+#	for i in range(10):
+#		print('Some text' + str(i))
+#		time.sleep(0.1)
+#		bar.update(i)
+#	
+#	sys.stdout = saveout
+#
+#	bar = progressbar.ProgressBar(max_value=progressbar.UnknownLength)
+#	for i in range(20):
+#   		time.sleep(0.2)
+#   		bar.update(i) 
+
+
+	#driver = webdriver.Chrome()
+	for text in ["zwergsnoid"]:#, "boa tarde", "boa noite", "segunda",
+	#"terça", "quarta", "quinta", "sexta", "sabado", "feriado",
+	#"whatsapp imagens para" ]:
+		search_queue.put(text)
+	print("Before creating threads")
+	createThreads()
+
+	#while True:
+	#	searchstring = search_queue.get()
+
+	#	
+	#	try:
+	#		searchresult = findImages(driver, searchstring)
+	#	except TimeoutException as timeout:
+	#		print((colorize("{} : {} {}", Fore.RED) + 
+	#			" has occurred while searching, retrying").format(
+	#			type(timeout), timeout.args, timeout))
+
+	#	search_queue.task_done()
+
+	#	while not download_queue.empty():
+
+	#		(url, description, searchtext) = download_queue.get()
+	#		if not (url and searchtext):
+	#			download_queue.task_done()
+	#			continue
+	#		folder = ""
+	#		folder += searchtext#.replace(" ","-")
+
+	#		if not os.path.exists(folder):
+	#			os.makedirs(folder)
+
+	#		try:
+	#			downloadImage(url, description, folder)
+	#		except socket.gaierror:
+	#			pass
+	#		except urllib.error.URLError:
+	#			pass
+
+	#		download_queue.task_done()
+
+	#	while not keywords_queue.empty():
+
+	#		keywords = keywords_queue.get()
+
+	#		analyze(keywords)
+	#	
+	#		keywords_queue.task_done()
+
+	#	for i in range(4):
+
+	#		newSearch()
+
+
+	
+
+#	display = Display(visible=0, size=(1024, 768))
+#	display.start()
+
+
+
+#	display.stop()
+#	driver.close()
 
 def print_usage():
 	print("\n\t Usage: {} times_to_test_color.py "
@@ -453,7 +549,13 @@ try:
 except IndexError:
 	filter_testing_times = neural_testing_times
 
+try:
+	web_testing_times = int(argv[4])
+except IndexError:
+	web_testing_times = filter_testing_times
 
-test_color(color_testing_times)
-test_neural(neural_testing_times)
-test_filter(filter_testing_times)
+
+#test_color(color_testing_times)
+#test_neural(neural_testing_times)
+#test_filter(filter_testing_times)
+test_web(web_testing_times)
